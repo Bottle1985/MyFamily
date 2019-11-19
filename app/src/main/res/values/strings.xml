@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyFamily</string>
+    <string name="person_name">Name</string>
 </resources>
