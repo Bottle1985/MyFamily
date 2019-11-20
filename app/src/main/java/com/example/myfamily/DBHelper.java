@@ -1,6 +1,8 @@
 package com.example.myfamily;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 public class DBHelper  extends SQLiteOpenHelper{
@@ -32,4 +34,22 @@ public class DBHelper  extends SQLiteOpenHelper{
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onUpgrade(db, oldVersion, newVersion);
     }
+    public boolean insertContact (String name, String phone, String email, String street,String place) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("phone", phone);
+        contentValues.put("email", email);
+        contentValues.put("street", street);
+        contentValues.put("place", place);
+        db.insert("contacts", null, contentValues);
+        return true;
+    }
+
+    public Cursor getData(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from contacts where id="+id+"", null );
+        return res;
+    }
+
 }
