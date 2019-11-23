@@ -2,4 +2,6 @@
     <string name="app_name">MyFamily</string>
     <string name="person_name">Name</string>
     <string name="person_name_edit">Name</string>
+    <string name="button">ButtonLoad</string>
+    <string name="buttonTest">ButtonTest</string>
 </resources>
