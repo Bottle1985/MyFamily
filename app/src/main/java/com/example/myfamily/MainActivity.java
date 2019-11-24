@@ -9,13 +9,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    EditText Name;
+    EditText Name, Phone;
     DBHelper mybd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Name= (EditText) findViewById(R.id.editText);
+        Phone= (EditText) findViewById(R.id.editTextPhone);
         mybd = new DBHelper(this);
     }
     public void onClickTest(View view)
@@ -37,16 +38,16 @@ public class MainActivity extends AppCompatActivity {
         String emai = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_EMAIL));
         String stree = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_STREET));
         String plac = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_CITY));
-
+        Name.setText(nam);
+        Phone.setText(phon);
         if (!rs.isClosed())  {
             rs.close();
         }
-        //Toast.makeText(getApplicationContext(), "Load Successfully",
+
+        Toast.makeText(getApplicationContext(), "Load Successfully",
+               Toast.LENGTH_SHORT).show();
+         //Toast.makeText(getApplicationContext(),  nam,
          //       Toast.LENGTH_SHORT).show();
-         Toast.makeText(getApplicationContext(),  nam,
-                Toast.LENGTH_SHORT).show();
-
-
     }
 
 }
