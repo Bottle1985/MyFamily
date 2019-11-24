@@ -9,37 +9,42 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    EditText Name, Phone;
-    DBHelper mybd;
+    EditText Name, Phone, Email, Street;
+    DBHelper myDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Name= (EditText) findViewById(R.id.editText);
         Phone= (EditText) findViewById(R.id.editTextPhone);
-        mybd = new DBHelper(this);
+        Email= (EditText) findViewById(R.id.editTextEmail);
+        Street= (EditText) findViewById(R.id.editTextStreet);
+        myDatabase = new DBHelper(this);
     }
     public void onClickTest(View view)
     {
         Name.setText("Bông is handsome");
-        mybd.insertContact("Boong","0914451299","mrboongvn@yahoo.com.vn","Doan Tran Nghiep", "28");
+        myDatabase.insertContact("Boong","0914451299","mrboongvn@yahoo.com.vn","Doan Tran Nghiep", "28");
         Toast.makeText(getApplicationContext(), "Test Successfully",
                 Toast.LENGTH_SHORT).show();
     }
     public void onClickLoad(View view)
     {
         //means this is the view part not the add contact part.
-        Cursor rs = mybd.getData(1);
+        Cursor rs = myDatabase.getData(1);
 
         rs.moveToFirst();
 
         String nam = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_NAME));
-        String phon = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_PHONE));
-        String emai = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_EMAIL));
-        String stree = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_STREET));
-        String plac = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_CITY));
+        String phone = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_PHONE));
+        String email = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_EMAIL));
+        String street = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_STREET));
+        String place = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_CITY));
         Name.setText(nam);
-        Phone.setText(phon);
+        Phone.setText(phone);
+        Email.setText(email);
+        Street.setText(street);
         if (!rs.isClosed())  {
             rs.close();
         }

@@ -6,4 +6,6 @@
     <string name="buttonTest">ButtonTest</string>
     <string name="phone">Phone</string>
     <string name="phoneNumber">PhoneNumber</string>
+    <string name="street">Street</string>
+    <string name="email">Email</string>
 </resources>
