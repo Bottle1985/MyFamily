@@ -8,4 +8,5 @@
     <string name="phoneNumber">PhoneNumber</string>
     <string name="street">Street</string>
     <string name="email">Email</string>
+    <string name="txtTotal">Total</string>
 </resources>
