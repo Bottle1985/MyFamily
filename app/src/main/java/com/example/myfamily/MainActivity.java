@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    EditText Name, Phone, Email, Street;
+    EditText Name, Phone, Email, Street, Select;
     TextView Total;
     DBHelper myDatabase;
 
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Phone= (EditText) findViewById(R.id.editTextPhone);
         Email= (EditText) findViewById(R.id.editTextEmail);
         Street= (EditText) findViewById(R.id.editTextStreet);
+        Select= (EditText) findViewById(R.id.editTextSelect);
 
         Total=(TextView) findViewById(R.id.textViewTotal);
         myDatabase = new DBHelper(this);
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         int total;
         Name.setText("Bông is handsome");
         //myDatabase.insertContact("Boong","0914451299","mrboongvn@yahoo.com.vn","Doan Tran Nghiep", "28");
+        //myDatabase.insertContact("Trang","0986005641","latttrang@gmail.com","Doan Tran Nghiep", "28");
 
         total = myDatabase.numberOfRows();
         Total.setText("Bông" + total);
@@ -40,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClickLoad(View view)
     {
         //means this is the view part not the add contact part.
-        Cursor rs = myDatabase.getData(1);
+        int index = Integer.parseInt(Select.getText().toString());
+        Cursor rs = myDatabase.getData(index);
 
         rs.moveToFirst();
 

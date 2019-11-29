@@ -5,8 +5,9 @@
     <string name="button">ButtonLoad</string>
     <string name="buttonTest">ButtonTest</string>
     <string name="phone">Phone</string>
-    <string name="phoneNumber">PhoneNumber</string>
+    <string name="phoneNumber">Phone Number</string>
     <string name="street">Street</string>
     <string name="email">Email</string>
     <string name="txtTotal">Total</string>
+    <string name="selectRecord">Select Record</string>
 </resources>
