@@ -5,15 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     EditText Name, Phone, Email, Street, Select;
     TextView Total;
+    private ListView obj;
     DBHelper myDatabase;
-
+    int totalRecord;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,18 +31,28 @@ public class MainActivity extends AppCompatActivity {
 
         Total=(TextView) findViewById(R.id.textViewTotal);
         myDatabase = new DBHelper(this);
+        // Show all record from contact
+        ArrayList array_list = myDatabase.getAllCotacts();
+        ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1, array_list);
+        obj = (ListView)findViewById(R.id.listView1);
+        obj.setAdapter(arrayAdapter);
+
+        // Show total record
+        totalRecord = myDatabase.numberOfRows();
+        Total.setText("Record " + totalRecord);
     }
     public void onClickTest(View view)
     {
-        int total;
-        Name.setText("Bông is handsome");
-        //myDatabase.insertContact("Boong","0914451299","mrboongvn@yahoo.com.vn","Doan Tran Nghiep", "28");
-        //myDatabase.insertContact("Trang","0986005641","latttrang@gmail.com","Doan Tran Nghiep", "28");
-
-        total = myDatabase.numberOfRows();
-        Total.setText("Bông" + total);
-        Toast.makeText(getApplicationContext(), "Test Successfully",
-                Toast.LENGTH_SHORT).show();
+        totalRecord  = myDatabase.numberOfRows();
+        if (totalRecord!=0) {
+            Name.setText("Bông is handsome");
+        }
+        else {
+            myDatabase.insertContact("Boong", "0914451299", "mrboongvn@yahoo.com.vn", "Doan Tran Nghiep", "28");
+            myDatabase.insertContact("Trang", "0986005641", "latttrang@gmail.com", "Doan Tran Nghiep", "28");
+            Toast.makeText(getApplicationContext(), "Test Successfully",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
     public void onClickLoad(View view)
     {
