@@ -62,13 +62,35 @@
         android:id="@+id/buttonTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="284dp"
         android:onClick="onClickTest"
         android:text="@string/buttonTest"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintHorizontal_bias="0.164"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:onClick="onClickSave"
+        android:text="@string/buttonSave"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonLoad"
+        app:layout_constraintStart_toEndOf="@+id/buttonLoad" />
+
+    <Button
+        android:id="@+id/buttonLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:onClick="onClickLoad"
+        android:text="@string/button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonTest"
+        app:layout_constraintStart_toEndOf="@+id/buttonTest" />
 
     <EditText
         android:id="@+id/editTextSelect"
@@ -92,17 +114,6 @@
         android:text="@string/phoneNumber"
         app:layout_constraintStart_toStartOf="@+id/editText"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
-
-    <Button
-        android:id="@+id/buttonLoad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:onClick="onClickLoad"
-        android:text="@string/button"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonTest"
-        app:layout_constraintStart_toEndOf="@+id/buttonTest" />
 
     <TextView
         android:id="@+id/textView2"
@@ -136,6 +147,20 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonLoad"
         app:layout_constraintStart_toStartOf="@+id/buttonLoad"
         app:layout_constraintTop_toBottomOf="@+id/buttonLoad" />
+
+    <EditText
+        android:id="@+id/editTextPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/place"
+        app:layout_constraintStart_toStartOf="@+id/editTextSelect"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSelect"
+        android:importantForAutofill="no" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

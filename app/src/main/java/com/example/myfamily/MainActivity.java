@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    EditText Name, Phone, Email, Street, Select;
+    EditText Name, Phone, Email, Street, Select, Place;
     TextView Total;
     private ListView obj;
     DBHelper myDatabase;
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Email= (EditText) findViewById(R.id.editTextEmail);
         Street= (EditText) findViewById(R.id.editTextStreet);
         Select= (EditText) findViewById(R.id.editTextSelect);
+        Place= (EditText) findViewById(R.id.editTextPlace);
 
         Total=(TextView) findViewById(R.id.textViewTotal);
         myDatabase = new DBHelper(this);
@@ -77,8 +78,19 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "Load Successfully",
                Toast.LENGTH_SHORT).show();
-         //Toast.makeText(getApplicationContext(),  nam,
-         //       Toast.LENGTH_SHORT).show();
+
+    }
+    public void onClickSave(View view) {
+        if(myDatabase.insertContact(Name.getText().toString(), Phone.getText().toString(),
+                Email.getText().toString(), Street.getText().toString(),
+                Place.getText().toString())){
+            Toast.makeText(getApplicationContext(), "Save Successfully",
+                    Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(getApplicationContext(), "Save not done",
+                    Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 }
