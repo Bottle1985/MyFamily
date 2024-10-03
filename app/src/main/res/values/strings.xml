@@ -1,15 +1,12 @@
 <resources>
-    <string name="app_name">MyFamily</string>
-    <string name="person_name">Name</string>
-    <string name="person_name_edit">Name</string>
-    <string name="button">ButtonLoad</string>
-    <string name="buttonTest">ButtonTest</string>
-    <string name="phone">Phone</string>
-    <string name="phoneNumber">Phone Number</string>
-    <string name="street">Street</string>
-    <string name="email">Email</string>
-    <string name="txtTotal">Total</string>
-    <string name="selectRecord">Select Record</string>
-    <string name="buttonSave">ButtonSave</string>
-    <string name="place">Place</string>
+    <string name="app_name">Mobile_java</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

@@ -1,2 +1,2 @@
-# MyFamily
-Information about family
+# mobile_java
+Đây là dự án java mobile
