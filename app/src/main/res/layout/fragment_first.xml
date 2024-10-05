@@ -15,7 +15,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <LinearLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent"
+        android:orientation = "vertical">
+        <ListView
+            android:id = "@+id/list"
+            android:layout_width = "wrap_content"
+            android:layout_height = "match_parent"
+            android:divider = "#000"
+            android:dividerHeight = "1dp"
+            android:footerDividersEnabled = "false"
+            android:headerDividersEnabled = "false"/>
+    </LinearLayout>
     <Button
         android:id="@+id/button_first"
         android:layout_width="wrap_content"
