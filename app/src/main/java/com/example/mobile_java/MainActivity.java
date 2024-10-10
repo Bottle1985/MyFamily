@@ -2,6 +2,8 @@ package com.example.mobile_java;
 
 import android.os.Bundle;
 
+import com.example.mobile_java.Adapter.CustomAdapter;
+import com.example.mobile_java.Data.SubjectData;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;

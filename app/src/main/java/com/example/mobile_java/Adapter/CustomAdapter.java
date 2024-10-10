@@ -1,4 +1,4 @@
-package com.example.mobile_java;
+package com.example.mobile_java.Adapter;
 
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -8,9 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+
+import com.example.mobile_java.R;
+import com.example.mobile_java.Data.SubjectData;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
-class CustomAdapter implements ListAdapter {
+public class CustomAdapter implements ListAdapter {
     ArrayList<SubjectData> arrayList;
     Context context;
     public CustomAdapter(Context context, ArrayList<SubjectData> arrayList) {
