@@ -19,7 +19,10 @@ import com.example.mobile_java.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -58,6 +61,18 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(new SubjectData("Android", "https://www.tutorialspoint.com/android/", "https://www.tutorialspoint.com/android/images/android-mini-logo.jpg"));
         CustomAdapter customAdapter = new CustomAdapter(this, arrayList);
         list.setAdapter(customAdapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                System.out.println("Good luck Boong " + position);
+                // Lấy đối tượng SubjectData tương ứng với vị trí đã click
+                SubjectData selectedSubject = arrayList.get(position);
+                System.out.println("Good luck " + arrayList.get(position));
+                // Hiển thị thông tin hoặc thực hiện hành động khác
+                Toast.makeText(getApplicationContext(), "Bạn đã chọn: " + selectedSubject.getName(), Toast.LENGTH_SHORT).show();
+
+                // Bạn có thể thêm các hành động khác ở đây
+            }
+        });
     }
 
     @Override

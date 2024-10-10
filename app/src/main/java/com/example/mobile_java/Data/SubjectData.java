@@ -9,4 +9,8 @@ public class SubjectData {
         this.Link = link;
         this.Image = image;
     }
+    public String getName()
+    {
+        return SubjectName;
+    }
 }
