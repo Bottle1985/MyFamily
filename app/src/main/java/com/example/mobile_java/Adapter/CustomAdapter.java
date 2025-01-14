@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mobile_java.R;
 import com.example.mobile_java.Data.SubjectData;
@@ -59,6 +60,14 @@ public class CustomAdapter implements ListAdapter {
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    System.out.println("Good luck Boong " + position);
+                    // Lấy đối tượng SubjectData tương ứng với vị trí đã click
+                    SubjectData selectedSubject = arrayList.get(position);
+                    // System.out.println("Good luck " + arrayList.get(position));
+                    // Hiển thị thông tin hoặc thực hiện hành động khác
+                    // Toast.makeText(getApplicationContext(), "Bạn đã chọn: " + selectedSubject.getName(), Toast.LENGTH_SHORT).show();
+
+                    // Bạn có thể thêm các hành động khác ở đây
                 }
             });
             TextView tittle = convertView.findViewById(R.id.title);
